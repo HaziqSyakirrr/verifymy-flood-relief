@@ -1,4 +1,4 @@
-window.onload = function () {
+window.onload = async function () {
     const savedData = localStorage.getItem("verifyMYData");
 
     if (savedData) {
@@ -11,6 +11,7 @@ window.onload = function () {
 
         const uploadedDocsList = document.getElementById("uploadedDocsList");
         const missingDocsList = document.getElementById("missingDocsList");
+        const aiSummary = document.getElementById("aiSummary");
 
         uploadedDocsList.innerHTML = "";
         missingDocsList.innerHTML = "";
@@ -61,6 +62,39 @@ window.onload = function () {
             const li = document.createElement("li");
             li.textContent = "No missing documents.";
             missingDocsList.appendChild(li);
+        }
+
+        if (aiSummary) {
+            aiSummary.textContent = "Generating AI summary...";
+
+            try {
+                const response = await fetch("/api/gemini", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify({
+                        applicantName: data.applicantName,
+                        uploadedDocs: data.uploadedDocs,
+                        missingDocs: data.missingDocs,
+                        readinessScore: data.readinessScore,
+                        priority: data.priority,
+                        recommendation: data.recommendation
+                    })
+                });
+
+                const result = await response.json();
+
+                if (!response.ok) {
+                    aiSummary.textContent = "AI summary is unavailable right now. Please review the uploaded and missing documents above.";
+                    console.error(result);
+                } else {
+                    aiSummary.textContent = result.summary || "AI summary is unavailable right now.";
+                }
+            } catch (error) {
+                aiSummary.textContent = "AI summary is unavailable right now. Please review the uploaded and missing documents above.";
+                console.error(error);
+            }
         }
     } else {
         document.querySelector(".card").innerHTML = `
