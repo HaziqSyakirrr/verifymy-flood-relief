@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Officer Dashboard - VerifyMY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand-wrap">
+                <h2>VerifyMY Public Services</h2>
+                <p>Officer Review Dashboard</p>
+            </div>
+            <div class="gov-badge">Internal Case Summary</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <span class="page-tag">Officer Dashboard</span>
+            <h1>Officer Dashboard</h1>
+            <p class="subtitle">
+                This dashboard shows the application summary for officer-side review.
+            </p>
+
+            <div class="meta-strip">
+                <div class="meta-item">Service Type: Flood Relief Assistance</div>
+                <div class="meta-item">Portal Reference: VRMY-FR-2026</div>
+                <div class="meta-item">Review Scope: Internal Officer Summary</div>
+            </div>
+
+            <div class="notice-box">
+                This dashboard view is intended for early-stage officer triage and does not replace formal verification or final approval decisions.
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-label">Status</span>
+                    <span class="kpi-value" id="dashStatus">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Uploaded</span>
+                    <span class="kpi-value" id="dashUploadedCount">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Readiness</span>
+                    <span class="kpi-value" id="dashScore">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Priority</span>
+                    <span class="kpi-value" id="dashPriority">-</span>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <h2>Application Summary</h2>
+                <p><strong>Applicant Name:</strong> <span id="dashName">-</span></p>
+                <p><strong>Application ID:</strong> <span id="dashId">-</span></p>
+            </div>
+
+            <div class="result-box">
+                <h2>Flagged Issues</h2>
+                <ul id="dashIssues" class="doc-list"></ul>
+            </div>
+
+            <div class="result-box">
+                <h2>Officer Recommendation</h2>
+                <p id="dashRecommendation">-</p>
+            </div>
+
+            <div class="section-space">
+                <button type="button" class="btn btn-secondary" id="resetAppBtn">Start New Application</button>
+                <a href="index.html" class="btn">Back to Home</a>
+            </div>
+
+            <p class="footer-note">Internal demo dashboard for officer-side summary review.</p>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        VerifyMY Public Services • Demo Prototype for Hackathon Submission
+    </div>
+
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

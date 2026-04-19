@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Documents - VerifyMY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand-wrap">
+                <h2>VerifyMY Public Services</h2>
+                <p>Citizen Submission Portal</p>
+            </div>
+            <div class="gov-badge">Secure Upload Workspace</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <span class="page-tag">Citizen Upload Portal</span>
+            <h1>Upload Required Documents</h1>
+            <p class="subtitle">
+                Please fill in your information and upload all required files for review.
+            </p>
+
+            <div class="meta-strip">
+                <div class="meta-item">Service Type: Flood Relief Assistance</div>
+                <div class="meta-item">Portal Reference: VRMY-FR-2026</div>
+                <div class="meta-item">Submission Mode: Citizen Pre-Check</div>
+            </div>
+
+            <div class="notice-box">
+                This portal performs a pre-submission readiness check. Final approval remains subject to officer review and formal verification.
+            </div>
+
+            <form id="uploadForm">
+                <div class="form-grid">
+                    <div class="form-full">
+                        <label for="applicantName">Applicant Name</label>
+                        <input type="text" id="applicantName" placeholder="Enter your full name">
+                    </div>
+                </div>
+
+                <div class="upload-grid">
+                    <div class="upload-card">
+                        <label for="icFile">Identity Card (IC)</label>
+                        <input type="file" id="icFile" accept=".jpg,.jpeg,.png,.pdf">
+                        <small>Required. Upload a clear image or PDF of the applicant's identity document.</small>
+                    </div>
+
+                    <div class="upload-card">
+                        <label for="addressFile">Proof of Address</label>
+                        <input type="file" id="addressFile" accept=".jpg,.jpeg,.png,.pdf">
+                        <small>Required. Utility bill, tenancy proof, or address confirmation document.</small>
+                    </div>
+
+                    <div class="upload-card">
+                        <label for="damageFile">House Damage Photo</label>
+                        <input type="file" id="damageFile" accept=".jpg,.jpeg,.png,.pdf">
+                        <small>Required. Provide visible flood-related property damage evidence.</small>
+                    </div>
+
+                    <div class="upload-card">
+                        <label for="supportFile">Supporting Statement / Report</label>
+                        <input type="file" id="supportFile" accept=".jpg,.jpeg,.png,.pdf">
+                        <small>Required. Supporting explanation, incident note, or local authority reference.</small>
+                    </div>
+                </div>
+
+                <div class="section-space">
+                    <button type="submit" class="btn">Run AI Check</button>
+                </div>
+            </form>
+
+            <p class="footer-note">Protected prototype interface for demonstration and evaluation purposes.</p>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        VerifyMY Public Services • Demo Prototype for Hackathon Submission
+    </div>
+
+    <script src="js/upload.js"></script>
+</body>
+</html>

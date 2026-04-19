@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Results - VerifyMY</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="topbar-inner">
+            <div class="brand-wrap">
+                <h2>VerifyMY Public Services</h2>
+                <p>AI-Assisted Pre-Check Results</p>
+            </div>
+            <div class="gov-badge">Application Assessment Summary</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <span class="page-tag">Review Summary</span>
+            <h1>Application Review Results</h1>
+            <p class="subtitle">
+                Below is the AI-assisted pre-check result for your uploaded documents.
+            </p>
+
+            <div class="meta-strip">
+                <div class="meta-item">Service Type: Flood Relief Assistance</div>
+                <div class="meta-item">Review Mode: AI-Assisted Pre-Screening</div>
+                <div class="meta-item">Portal Reference: VRMY-FR-2026</div>
+            </div>
+
+            <div class="notice-box">
+                This result is intended to help applicants identify missing or incomplete materials before final officer-side verification.
+            </div>
+
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <span class="kpi-label">Status</span>
+                    <span class="kpi-value" id="statusText">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Uploaded</span>
+                    <span class="kpi-value" id="uploadedCount">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Readiness Score</span>
+                    <span class="kpi-value" id="readinessScore">-</span>
+                </div>
+                <div class="kpi-card">
+                    <span class="kpi-label">Priority</span>
+                    <span class="kpi-value" id="priorityText">-</span>
+                </div>
+            </div>
+
+            <div class="result-box">
+                <h2>Applicant Information</h2>
+                <p><strong>Name:</strong> <span id="resultName">-</span></p>
+                <p><strong>Application ID:</strong> <span id="resultId">-</span></p>
+            </div>
+
+            <div class="result-box">
+                <h2>Uploaded Documents</h2>
+                <ul id="uploadedDocsList" class="doc-list"></ul>
+            </div>
+
+            <div class="result-box">
+                <h2>Missing Documents</h2>
+                <ul id="missingDocsList" class="doc-list"></ul>
+            </div>
+
+            <div class="result-box">
+                <h2>Recommendation</h2>
+                <p id="recommendationText">-</p>
+            </div>
+
+            <div class="section-space">
+                <a href="upload.html" class="btn btn-secondary">Back to Upload</a>
+                <a href="dashboard.html" class="btn">View Officer Dashboard</a>
+            </div>
+
+            <p class="footer-note">Generated as part of citizen-facing pre-submission review.</p>
+        </div>
+    </div>
+
+    <div class="site-footer">
+        VerifyMY Public Services • Demo Prototype for Hackathon Submission
+    </div>
+
+    <script src="js/results.js"></script>
+</body>
+</html>
